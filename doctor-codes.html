@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor access codes — MS MEDICAL</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo"><span>MS</span> MEDICAL</a>
+
+    <div class="nav-right">
+        <span class="language">Administration</span>
+    </div>
+</header>
+
+
+<main class="dashboard">
+
+    <div class="section-label">HOSPITAL ADMINISTRATION</div>
+
+    <div class="dash-head">
+        <div>
+            <h1>Doctor access codes</h1>
+            <p>One personal code for each of the 55 doctors</p>
+        </div>
+    </div>
+
+    <div class="codes-warning">
+        Demo page for the project presentation. Give each doctor only their own code.
+        In a real system this page must not be public — codes are checked on a server, not in the browser.
+    </div>
+
+    <div class="doctor-filters">
+        <div class="search-wrapper">
+            <span>⌕</span>
+            <input id="codeSearch" type="text" placeholder="Search by name, specialty or code..." oninput="renderCodes()">
+        </div>
+    </div>
+
+    <div class="codes-table-wrap">
+        <table class="codes-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Doctor</th>
+                    <th>Specialty</th>
+                    <th>Access code</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="codesBody"></tbody>
+        </table>
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="footer-logo"><span>MS</span> MEDICAL</div>
+    <p>Boryspil City Private Hospital</p>
+    <p>© 2026 MS MEDICAL</p>
+</footer>
+
+
+<script src="script.js"></script>
+<script>
+    function renderCodes() {
+        const query = document.getElementById("codeSearch").value.toLowerCase().trim();
+
+        const registered = getUsers()
+            .filter(user => user.role === "doctor")
+            .map(user => user.doctorId);
+
+        const rows = doctors
+            .filter(d =>
+                (d.name + " " + d.specialty + " " + d.code).toLowerCase().includes(query)
+            )
+            .map(d => {
+                const used = registered.includes(d.id);
+
+                return "<tr>" +
+                    "<td>" + d.id + "</td>" +
+                    "<td>" + escapeHtml(d.name) + "</td>" +
+                    "<td>" + escapeHtml(d.specialty) + "</td>" +
+                    "<td><code>" + d.code + "</code></td>" +
+                    '<td class="' + (used ? "used" : "free") + '">' +
+                    (used ? "Registered" : "Available") + "</td>" +
+                    "</tr>";
+            });
+
+        document.getElementById("codesBody").innerHTML =
+            rows.join("") ||
+            '<tr><td colspan="5">Nothing found.</td></tr>';
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCodes);
+</script>
+
+</body>
+</html>

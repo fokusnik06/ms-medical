@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MS MEDICAL — Boryspil City Private Hospital</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <span>MS</span> MEDICAL
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#departments">Departments</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+        <span class="language">EN</span>
+        <button class="login-nav" onclick="openLogin()">Login</button>
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hospital-label">
+            BORYSPIL CITY PRIVATE HOSPITAL
+        </div>
+
+        <h1>
+            Healthcare<br>
+            you can <span>trust.</span>
+        </h1>
+
+        <p>
+            Modern medical care, experienced specialists
+            and a patient-first approach — all in one place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#doctors" class="btn-primary">
+                Find a Doctor
+            </a>
+
+            <button class="btn-outline" onclick="openLogin()">
+                Book an Appointment
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="images/hospital.jpg"
+            alt="Boryspil City Private Hospital"
+            onerror="this.style.display='none'; document.querySelector('.image-placeholder').style.display='flex';"
+        >
+
+        <div class="image-placeholder">
+            MS MEDICAL
+        </div>
+
+        <div class="hero-card">
+
+            <div class="emergency-icon">+</div>
+
+            <div>
+                <strong>24/7 Emergency</strong>
+                <small>Medical assistance</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+
+    <div>
+        <strong>50+</strong>
+        <span>Specialists</span>
+    </div>
+
+    <div>
+        <strong>20+</strong>
+        <span>Departments</span>
+    </div>
+
+    <div>
+        <strong>24/7</strong>
+        <span>Emergency</span>
+    </div>
+
+    <div>
+        <strong>10k+</strong>
+        <span>Patients</span>
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+
+    <div class="section-label">
+        ABOUT MS MEDICAL
+    </div>
+
+    <div class="about-grid">
+
+        <h2>
+            Modern medicine.<br>
+            <span>Human approach.</span>
+        </h2>
+
+        <div class="about-text">
+
+            <p>
+                MS MEDICAL is a private city hospital focused on
+                accessible, modern and personalized healthcare.
+            </p>
+
+            <p>
+                Our specialists work together to provide patients
+                with professional medical assistance in a comfortable
+                and safe environment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature-card">
+            <span>01</span>
+            <h3>Experienced Specialists</h3>
+            <p>Qualified doctors across multiple medical fields.</p>
+        </div>
+
+        <div class="feature-card">
+            <span>02</span>
+            <h3>Modern Technology</h3>
+            <p>Digital tools designed to make healthcare easier.</p>
+        </div>
+
+        <div class="feature-card">
+            <span>03</span>
+            <h3>Patient First</h3>
+            <p>Every decision starts with the patient's needs.</p>
+        </div>
+
+        <div class="feature-card">
+            <span>04</span>
+            <h3>Digital Healthcare</h3>
+            <p>Appointments, doctors and medical information online.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DEPARTMENTS -->
+<section class="section departments" id="departments">
+
+    <div class="section-label">
+        MEDICAL DEPARTMENTS
+    </div>
+
+    <div class="section-heading">
+
+        <h2>
+            Care for every<br>
+            <span>stage of life.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="department-grid">
+
+        <div class="department-card">
+            <div class="department-icon">♡</div>
+            <h3>Cardiology</h3>
+            <p>Heart and cardiovascular care.</p>
+            <a href="#doctors">Explore →</a>
+        </div>
+
+        <div class="department-card">
+            <div class="department-icon">◉</div>
+            <h3>Neurology</h3>
+            <p>Professional neurological care.</p>
+            <a href="#doctors">Explore →</a>
+        </div>
+
+        <div class="department-card">
+            <div class="department-icon">✚</div>
+            <h3>Pediatrics</h3>
+            <p>Medical care for children and teenagers.</p>
+            <a href="#doctors">Explore →</a>
+        </div>
+
+        <div class="department-card">
+            <div class="department-icon">✦</div>
+            <h3>Dermatology</h3>
+            <p>Professional skin health services.</p>
+            <a href="#doctors">Explore →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DOCTORS -->
+<section class="section doctors" id="doctors">
+
+    <div class="section-label">
+        OUR SPECIALISTS
+    </div>
+
+    <div class="section-top">
+
+        <h2>
+            Meet our<br>
+            <span>doctors.</span>
+        </h2>
+
+        <a href="doctor.html" class="text-link">
+            View all 55 doctors →
+        </a>
+
+    </div>
+
+
+    <div class="doctor-grid">
+
+        <!-- DOCTOR 1 -->
+        <div class="doctor-card">
+
+            <div class="doctor-photo">
+
+                <img
+                    src="images/doctors/doctor-1.jpg"
+                    alt="Dr. Anna Wilson"
+                    onerror="this.style.display='none'"
+                >
+
+            </div>
+
+            <div class="doctor-info">
+
+                <div class="doctor-specialty">
+                    CARDIOLOGY
+                </div>
+
+                <h3>Dr. Anna Wilson</h3>
+
+                <p>15 years of experience</p>
+
+                <button
+                    onclick="bookDoctor('Dr. Anna Wilson')"
+                    class="doctor-button"
+                >
+                    Book Appointment
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DOCTOR 2 -->
+        <div class="doctor-card">
+
+            <div class="doctor-photo">
+
+                <img
+                    src="images/doctors/doctor-2.jpg"
+                    alt="Dr. Michael Brown"
+                    onerror="this.style.display='none'"
+                >
+
+            </div>
+
+            <div class="doctor-info">
+
+                <div class="doctor-specialty">
+                    NEUROLOGY
+                </div>
+
+                <h3>Dr. Michael Brown</h3>
+
+                <p>12 years of experience</p>
+
+                <button
+                    onclick="bookDoctor('Dr. Michael Brown')"
+                    class="doctor-button"
+                >
+                    Book Appointment
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DOCTOR 3 -->
+        <div class="doctor-card">
+
+            <div class="doctor-photo">
+
+                <img
+                    src="images/doctors/doctor-3.jpg"
+                    alt="Dr. Sofia Miller"
+                    onerror="this.style.display='none'"
+                >
+
+            </div>
+
+            <div class="doctor-info">
+
+                <div class="doctor-specialty">
+                    PEDIATRICS
+                </div>
+
+                <h3>Dr. Sofia Miller</h3>
+
+                <p>10 years of experience</p>
+
+                <button
+                    onclick="bookDoctor('Dr. Sofia Miller')"
+                    class="doctor-button"
+                >
+                    Book Appointment
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="doctors-more">
+
+        <a href="doctor.html" class="view-doctors-button">
+            VIEW ALL 55 DOCTORS →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+<section class="appointment">
+
+    <div>
+
+        <div class="section-label">
+            YOUR HEALTH MATTERS
+        </div>
+
+        <h2>
+            Ready to take<br>
+            care of your <span>health?</span>
+        </h2>
+
+        <p>
+            Find a specialist and book your appointment online.
+        </p>
+
+    </div>
+
+    <button
+        class="appointment-button"
+        onclick="openLogin()"
+    >
+        Book an Appointment →
+    </button>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+
+    <div class="section-label">
+        CONTACT
+    </div>
+
+    <div class="contact-grid">
+
+        <h2>
+            We're here<br>
+            <span>for you.</span>
+        </h2>
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Address</strong><br>
+                Boryspil, Kyiv Region, Ukraine
+            </p>
+
+            <p>
+                <strong>Emergency</strong><br>
+                103 / 24 hours
+            </p>
+
+            <p>
+                <strong>Reception</strong><br>
+                +380 XX XXX XX XX
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        <span>MS</span> MEDICAL
+    </div>
+
+    <p>Boryspil City Private Hospital</p>
+
+    <p>© 2026 MS MEDICAL</p>
+
+</footer>
+
+
+<!-- AUTHENTICATION MODAL -->
+<div class="modal" id="loginModal">
+    <div class="modal-content auth-content">
+
+        <button class="modal-close" onclick="closeLogin()">×</button>
+
+        <div class="section-label">MS MEDICAL</div>
+
+        <!-- ROLE SELECTION -->
+        <div id="rolePanel">
+            <h2>Welcome to MS MEDICAL</h2>
+            <p class="modal-description">Choose your account type</p>
+
+            <div class="auth-role-buttons">
+                <button type="button" class="modal-button"
+                        onclick="selectRole('patient')">
+                    I am a Patient
+                </button>
+
+                <button type="button" class="modal-button"
+                        onclick="selectRole('doctor')">
+                    I am a Doctor
+                </button>
+            </div>
+        </div>
+
+        <!-- LOGIN / REGISTER PANEL -->
+        <div id="authPanel" hidden>
+            <h2 id="authTitle">Login</h2>
+            <p class="modal-description" id="authDescription"></p>
+
+            <form id="authForm" onsubmit="handleAuth(event)">
+                <div id="nameField" hidden>
+                    <input id="authName" type="text"
+                           placeholder="Full name">
+                </div>
+
+                <div id="phoneField" hidden>
+                    <input id="authPhone" type="tel"
+                           placeholder="Phone number">
+                </div>
+
+                <input id="authEmail" type="email"
+                       placeholder="Email address" required>
+
+                <input id="authPassword" type="password"
+                       placeholder="Password" minlength="8" required>
+
+                <div id="specialtyField" hidden>
+                    <input id="authSpecialty" type="text"
+                           placeholder="Medical specialty">
+                </div>
+
+                <button type="submit" class="modal-button"
+                        id="authSubmit">
+                    Login
+                </button>
+            </form>
+
+            <p class="register-text" id="authSwitchText">
+                Don't have an account?
+                <span onclick="switchAuthMode()">Create account</span>
+            </p>
+
+            <p class="register-text">
+                <span onclick="backToRoles()">← Back to role selection</span>
+            </p>
+        </div>
+
+        <p id="authMessage" class="auth-message" aria-live="polite"></p>
+
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

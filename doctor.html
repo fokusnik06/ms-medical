@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Doctors — MS MEDICAL</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <span>MS</span> MEDICAL
+    </a>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+        <a href="index.html#departments">
+            Departments
+        </a>
+
+        <a href="doctor.html" class="active">
+            Doctors
+        </a>
+
+        <a href="index.html#contact">
+            Contact
+        </a>
+
+    </nav>
+
+    <div class="nav-right">
+
+        <span class="language">EN</span>
+
+        <button
+            class="login-nav"
+            onclick="openLogin()"
+        >
+            Login
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- PAGE INTRO -->
+
+<section class="catalog-hero">
+
+    <div class="section-label">
+        MS MEDICAL SPECIALISTS
+    </div>
+
+    <h1>
+        Find your<br>
+        <span>doctor.</span>
+    </h1>
+
+    <p>
+        Explore our medical specialists and find the right
+        professional for your healthcare needs.
+    </p>
+
+</section>
+
+
+<!-- DOCTOR CATALOG -->
+
+<section class="doctor-catalog">
+
+    <div class="catalog-heading">
+
+        <div>
+
+            <div class="section-label">
+                MEDICAL TEAM
+            </div>
+
+            <h2>
+                55 specialists
+            </h2>
+
+        </div>
+
+        <p class="demo-note">
+            Demo profiles for project presentation
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH / FILTER -->
+
+    <div class="doctor-filters">
+
+        <div class="search-wrapper">
+
+            <span>⌕</span>
+
+            <input
+                id="doctorSearch"
+                type="text"
+                placeholder="Search doctor by name..."
+                oninput="filterDoctors()"
+            >
+
+        </div>
+
+
+        <select
+            id="specialtyFilter"
+            onchange="filterDoctors()"
+        >
+
+            <option value="all">
+                All specialties
+            </option>
+
+            <option value="Cardiology">
+                Cardiology
+            </option>
+
+            <option value="Neurology">
+                Neurology
+            </option>
+
+            <option value="Pediatrics">
+                Pediatrics
+            </option>
+
+            <option value="Dermatology">
+                Dermatology
+            </option>
+
+            <option value="Orthopedics">
+                Orthopedics
+            </option>
+
+            <option value="Gastroenterology">
+                Gastroenterology
+            </option>
+
+            <option value="Ophthalmology">
+                Ophthalmology
+            </option>
+
+            <option value="ENT">
+                ENT
+            </option>
+
+            <option value="Gynecology">
+                Gynecology
+            </option>
+
+            <option value="Urology">
+                Urology
+            </option>
+
+            <option value="Endocrinology">
+                Endocrinology
+            </option>
+
+            <option value="General Practice">
+                General Practice
+            </option>
+
+            <option value="Surgery">
+                Surgery
+            </option>
+
+            <option value="Psychiatry">
+                Psychiatry
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- DOCTORS -->
+
+    <div
+        class="catalog-grid"
+        id="doctorGrid"
+    ></div>
+
+
+    <!-- PAGINATION -->
+
+    <div
+        class="pagination"
+        id="pagination"
+    ></div>
+
+</section>
+
+
+<!-- PROFILE MODAL -->
+
+<div
+    class="profile-modal"
+    id="profileModal"
+>
+
+    <div class="profile-modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeDoctorProfile()"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="profile-modal-photo"
+            id="profilePhoto"
+        ></div>
+
+
+        <div class="section-label">
+            MEDICAL SPECIALIST
+        </div>
+
+        <h2 id="profileName">
+            Doctor
+        </h2>
+
+        <div
+            class="profile-specialty"
+            id="profileSpecialty"
+        >
+            Specialty
+        </div>
+
+
+        <div class="profile-details">
+
+            <div>
+
+                <strong>
+                    Experience
+                </strong>
+
+                <span id="profileExperience">
+                    10 years
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Department
+                </strong>
+
+                <span id="profileDepartment">
+                    Medical
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Schedule
+                </strong>
+
+                <span>
+                    Mon — Fri
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <p class="profile-description">
+
+            Professional medical consultation and
+            personalized patient care.
+
+        </p>
+
+
+        <button
+            class="modal-button"
+            onclick="bookSelectedDoctor()"
+        >
+            Book Appointment →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div class="modal" id="loginModal">
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeLogin()"
+        >
+            ×
+        </button>
+
+        <div class="section-label">
+            MS MEDICAL
+        </div>
+
+        <h2>
+            Welcome back
+        </h2>
+
+        <p class="modal-description">
+            Login to manage your appointments.
+        </p>
+
+        <form onsubmit="login(event)">
+
+            <input
+                type="email"
+                placeholder="Email address"
+                required
+            >
+
+            <input
+                type="password"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="modal-button"
+            >
+                Login
+            </button>
+
+        </form>
+
+        <p class="register-text">
+            Don't have an account?
+            <span onclick="demoRegister()">
+                Create account
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        <span>MS</span> MEDICAL
+    </div>
+
+    <p>
+        Boryspil City Private Hospital
+    </p>
+
+    <p>
+        © 2026 MS MEDICAL
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
